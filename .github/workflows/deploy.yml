@@ -17,5 +17,7 @@ jobs:
       run: |
         cd /var/www/html
         sudo git pull origin main
+        git fetch origin main          # Puxa as referências do GitHub
+        git reset --hard origin/main
         sudo systemctl restart nginx
         echo "Deploy realizado com sucesso em $(date)"
