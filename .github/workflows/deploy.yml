@@ -16,7 +16,6 @@ jobs:
     - name: Atualizar site
       run: |
         cd /var/www/html
-        git fetch origin main # Puxa as informações da nova versão, mas não mescla
-        git reset --hard origin/main # FORÇA o repositório local a ser idêntico ao remoto (GitHub)
+        sudo git pull origin main
         sudo systemctl restart nginx
         echo "Deploy realizado com sucesso em $(date)"
